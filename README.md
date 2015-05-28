@@ -19,7 +19,9 @@ You will need the following:
     - Install the universal document converter [pandoc](http://pandoc.org/); 
     - Install a TeX distribution such as [MikTex](http://miktex.org/) for pandoc to use;
     - Install Python to use the Python script `convert.py` that takes care of collating multiple markdown files into a single one and calling pandoc to deal with it.
-* Optionally, if you use Google Chrome and want to enable MathJax for the rendering of the TeX parts of the markdown files in the GitHub web interface, try [this extension](https://chrome.google.com/webstore/detail/tex-all-the-things/cbimabofgmfdkicghcadidpemeenbffn).
+* Optionally, if you use Google Chrome and want to enable MathJax for the rendering of the TeX parts of the markdown files in the GitHub web interface, try [this extension](https://chrome.google.com/webstore/detail/tex-all-the-things/cbimabofgmfdkicghcadidpemeenbffn). Then inline TeX snippets should render like this:
+
+![screenshot of TeX the World extension in action](https://raw.githubusercontent.com/kellhus/munkres-study-notes/master/assets/chrome-mathjax-example.png)
 
 
 ## Using the Software
