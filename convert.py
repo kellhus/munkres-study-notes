@@ -12,7 +12,7 @@ def write_combined_markdown(dirname, combined_name):
             path = root.split('/')
             # print('# {}\n'.format(os.path.basename(root)), file=combined)
             for filename in filenames:
-                with open('{}/{}'.format(root, filename), 'r') as piece:
+                with open(os.path.join(root, filename), 'r') as piece:
                     markdown = piece.read()
                     print(markdown, file=combined)
 
