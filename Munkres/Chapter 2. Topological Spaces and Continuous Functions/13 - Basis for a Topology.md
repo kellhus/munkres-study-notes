@@ -13,3 +13,13 @@ I think I would prefer the phrase "a base" to talk about some "basis element".)
 Let $X$ be a topological space, and let $A \subset X$.
 Suppose that for each $x \in A$ there is an open set $U$ containing $x$ such that $U \subset A$.
 Then $A$ is the union of all such subsets $U$ and, being the union of open sets, is open.
+
+### Exercise 2.13.3.
+
+Show that the collection $\mathcal{T}_{C}$ given in example 4 of $\S 12$ is a topology on $X$.  Is the collection $\mathcal{T}_\infty = \{U |X-U \text{is infinite or empty or all of } X\}$ a topology on $X$?
+
+(Example 4 was $T_c$ is the collection of all subsets $U$ of $X$ such that $X-U$ either is countable or all of $X$.  Then $\mathcal{T}_c$.)
+
+That $\emptyset\in \mathcal{T}_c$ is due to the fact that $X-\emptyset = X$; that $X\in T_c$ is due to $X-X=\emptyset$ is countable.  Let $U_\alpha$ be a family of open sets so that $X-U_\alpha$ is countable or all of $X$.  Then $\displaystyle X - \bigcup_{\alpha \in \mathcal{I}}U_\alpha = \bigcap_{\alpha\in \mathcal{I}}(X-U_\alpha)$ is an intersection of countable sets or $X$ and is therefore a countable set or is $X$.  The proof for arbitrary intersections is similar.
+
+The collection $\mathcal{T}_\infty$ is not a topology because it is not closed under unions, since $\displaystyle X-\bigcup_{\alpha\in\mathcal{I}}U_\alpha=\bigcap_{\alpha\in\mathcal{I}}(X-U_\alpha)$ is not guaranteed to be infinite even if $X-U_\alpha$ is infinite for each $\alpha$.  For a concrete example take $X=\mathbb{R}$ with $U_x = (-x,x)$ for each $x\in \mathbb{R}$.  This is essentially due to the fact that we allow any unions in a topology, which in this case leads us to a certain infinite intersection causing the set in question to vanish.
