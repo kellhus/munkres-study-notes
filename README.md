@@ -88,5 +88,3 @@ The issues can be classified using labels for easy lookup. The labels are intend
 * Follow the structure of the book. That is, don't put Exercise 2.10.3 before Exercise 2.10.1 in the markdown file for Section 10.
 
 ### Academic Integrity
-
-TODO
