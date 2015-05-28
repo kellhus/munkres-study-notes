@@ -81,7 +81,7 @@ The issues can be classified using labels for easy lookup. The labels are intend
 ### Editing the Markdown Files
 
 * End each sentence with a new line. This guideline is motivated by the nature of the Git versioning control system, which tracks the lines, not the words or sentences in individual lines.
-* The notation `3.12.1` refers to Chapter 3, Section 12, Theorem / Exercise / Lemma 1.
+* The notation `Theorem (Exercise, Example, Lemma) 3.12.1` refers to Chapter 3, Section 12, Theorem (Exercise, Example, Lemma) 1.
 * Use `### Comment on Lemma 2.5.4` to add commentary to the respective theorem or lemma.
 * Use `### Exercise 1.12.5` to add a solution to an exercise.
 * Use `### Freestyle Heading` to add something that does not fall into the above categories.
