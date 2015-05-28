@@ -14,7 +14,6 @@ You will need the following:
 * Register an account with GitHub;
 * Set up the Git version control system to pull/push changes from/to the repository to/from your local computer. See the [GitHub help pages](https://help.github.com/articles/set-up-git/) for instructions;
     - A temporary alternative to the above -- until you have figured `git` out -- would be to edit the markdown files via the GitHub web interface and to copy-and-paste the relevant snippets into a web-based markdown editor such as [StackEdit](https://stackedit.io/) for preview.
-
 * Optionally, if you are planning to convert the pandoc markdown files into PDF on your own computer:
     - Install the universal document converter [pandoc](http://pandoc.org/); 
     - Install a TeX distribution such as [MikTex](http://miktex.org/) for pandoc to use;
@@ -50,6 +49,8 @@ git commit -m "Describe the nature of your edits here"
 git pull
 git push
 ```
+
+For further information on the Git versioning system, [these](https://www.atlassian.com/git/tutorials/) excellent tutorials are highly recommended!
 
 ### Markdown to PDF
 A Python script is provided that takes care of combining the markdown files and invoking the pandoc converter on the combined file. Simply open the command line in `munkres-study-notes` and call:
@@ -89,8 +90,4 @@ The issues can be classified using labels for easy lookup. The labels are intend
 
 ### Academic Integrity
 
-Of course the point of the study group is to learn and that requires doing the work yourself.  We will be putting together the solutions to problems and notes in the main branch, so you shouldn't look at the relevant sections until you've tried the problems yourself in order to avoid "spoilers".  If you just want discussion, clarification, or a little hint or push in the right direction, create an issue using the black plus sign at the top-right of the page, and label it according to the labelling conventions described above.  
-
-<<<<<<< HEAD
-=======
->>>>>>> 8460faa0c2cb97668ca16675eceae25483bdcff6
+Of course the point of the study group is to learn and that requires doing the work yourself.  We will be putting together the solutions to problems and notes in the main branch, so you shouldn't look at the relevant sections until you've tried the problems yourself in order to avoid "spoilers".  If you just want discussion, clarification, or a little hint or push in the right direction, create an issue using the black plus sign at the top-right of the page, and label it according to the labelling conventions described above.
