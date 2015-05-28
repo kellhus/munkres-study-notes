@@ -89,4 +89,4 @@ The issues can be classified using labels for easy lookup. The labels are intend
 
 ### Academic Integrity
 
-TODO
+Of course the point of the study group is to learn and that requires doing the work yourself.  We will be putting together the solutions to problems and notes in the main branch, so you shouldn't look at the relevant sections until you've tried the problems yourself in order to avoid "spoilers".  If you just want discussion, clarification, or a little hint or push in the right direction, create an issue using the black plus sign at the top-right of the page, and label it according to the labelling conventions described above.  
