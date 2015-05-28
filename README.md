@@ -3,6 +3,7 @@ This is a repository for the participants of the topology study group at [/r/Gro
 ### Table of Contents
 **[Software Prerequisites](#software-prerequisites)**  
 **[Using the Software](#using-the-software)**  
+**[Using the Issue Tracker](#using-the-issue-tracker)**  
 **[Guidelines](#guidelines)**  
 
 
@@ -55,8 +56,16 @@ A Python script is provided that takes care of combining the markdown files and 
 python convert.py Munkres
 ```
 
-## Use the Issue Tracker
-The [issue tracker](https://github.com/kellhus/munkres-study-notes/issues) can be used for requesting clarification from more knowledgeable participants on any issues that might arise, be they unclear wording in the text, unsufficient motivation of theorems or definitions, or problems with exercises. If you know the solution to an issue, make suitable changes to the markdown files and close the issue. The issues can also be discussed in the process. An example issue is available [here](https://github.com/kellhus/munkres-study-notes/issues/1).
+## Using the Issue Tracker
+
+The [issue tracker](https://github.com/kellhus/munkres-study-notes/issues) can be used for requesting clarification from more knowledgeable participants on any issues that might arise, be they unclear wording in the text, unsufficient motivation of theorems or definitions, or problems with exercises. If you know the solution to an issue, make suitable changes to the markdown files. The issues can also be discussed in the process. An example issue is available [here](https://github.com/kellhus/munkres-study-notes/issues/1).
+
+The issues can be classified using labels for easy lookup. The labels are intended as follows:
+
+* `organizational`: obvious;
+* `question`: for specific questions about passages in the text or exercises;
+* `help wanted`: in case you plan to write a section explaining some theorem, but need proofreading or are not sure you can pull it off alone;
+* `bug`: for drawing attention to bugs in the Python script or problems with other associated software.
 
 ## Guidelines
 
