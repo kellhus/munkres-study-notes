@@ -62,10 +62,11 @@ The [issue tracker](https://github.com/kellhus/munkres-study-notes/issues) can b
 
 The issues can be classified using labels for easy lookup. The labels are intended as follows:
 
-* `organizational`: obvious;
-* `question`: for specific questions about passages in the text or exercises;
-* `help wanted`: in case you plan to write a section explaining some theorem, but need proofreading or are not sure you can pull it off alone;
-* `bug`: for drawing attention to bugs in the Python script or problems with other associated software.
+* **organizational**: for discussion concerning the group-study process;
+* **question**: for specific questions about passages in the text or exercises;
+* **mistake**: if you see something in someone else's solution or explanation that might be a mistake, open an issue and label it as such;
+* **help wanted**: in case you plan to write a section explaining some theorem, but need proofreading or are not sure you can pull it off alone;
+* **bug**: for drawing attention to bugs in the Python script or problems with other associated software.
 
 ## Guidelines
 
