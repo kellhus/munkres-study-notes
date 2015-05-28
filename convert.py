@@ -5,14 +5,16 @@ import sys
 import argparse
 import subprocess
 
-
+# TODO: Figure out a general way to get directory depth for the headings
 def write_combined_markdown(dirname, combined_name):
     with open(combined_name, 'w') as combined:
         for root, dirs, filenames in os.walk(dirname):
             path = root.split('/')
-            # print('# {}\n'.format(os.path.basename(root)), file=combined)
+            print('# {}\n'.format(os.path.basename(root)), file=combined)
             for filename in filenames:
-                with open(os.path.join(root, filename), 'r') as piece:
+                print('## {}\n'.format(filename.replace('.md', '')), file=combined)
+                path = os.path.join(root, filename)
+                with open(path, 'r') as piece:
                     markdown = piece.read()
                     print(markdown, file=combined)
 
