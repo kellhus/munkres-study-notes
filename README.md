@@ -37,7 +37,7 @@ git commit -m "Describe the nature of your edits here"
 git push
 ```
 
-If the remote repository has been updated by someone else while you were working on your local copy, you will need to do the following instead:
+If the remote repository has been updated by someone else while you were working on your local copy, you will need to do the following instead (barring exceptional circumstances such as conflicting commits). This will take care of fetching the remote changes and merging them with your local changes -- so, if the remote repository has a solution to an exercise, and your local copy has a solution to another exercise, then `git pull` should take care of that and update your local copy to have both solutions.
 
 ```
 git add .
@@ -58,4 +58,8 @@ The [issue tracker](https://github.com/kellhus/munkres-study-notes/issues) can b
 
 ## General Guidelines
 
+Use the issue tracker.
+
 The notation `3.12.1` refers to Chapter 3, Section 12, Theorem / Exercise / Lemma 1. Use `### Comment on Lemma 2.5.4` to add commentary to the respective theorem or lemma. Use `### Exercise 1.12.5` to add a solution to an exercise. Use `### Freestyle Heading` to add something that does not fall into the above categories.
+
+We leave it up to individual participants to not look at the solutions until the participants have tried it on their own and are ready to scrutinize others' solutions, if any.
