@@ -3,7 +3,7 @@ This is a repository for the participants of the topology study group at [/r/Gro
 ### Table of Contents
 **[Software Prerequisites](#software-prerequisites)**  
 **[Using the Software](#using-the-software)**  
-**[General Guidelines](#general-guidelines)**  
+**[Guidelines](#guidelines)**  
 
 
 ## Software Prerequisites
@@ -12,11 +12,13 @@ You will need the following:
 
 * Register an account with GitHub;
 * Set up the Git version control system to pull/push changes from/to the repository to/from your local computer. See the [GitHub help pages](https://help.github.com/articles/set-up-git/) for instructions;
-    - An alternative to the above would be to edit the markdown files via the GitHub web interface and to copy-and-paste the relevant snippets into a web-based markdown editor such as [StackEdit](https://stackedit.io/) for preview;
+    - A temporary alternative to the above -- until you have figured `git` out -- would be to edit the markdown files via the GitHub web interface and to copy-and-paste the relevant snippets into a web-based markdown editor such as [StackEdit](https://stackedit.io/) for preview.
+
 * Optionally, if you are planning to convert the pandoc markdown files into PDF on your own computer:
-    - Install the document converter [pandoc](http://pandoc.org/); 
-    - Install a TeX distribution such as [MikTex](http://miktex.org/) for pandoc to call;
+    - Install the universal document converter [pandoc](http://pandoc.org/); 
+    - Install a TeX distribution such as [MikTex](http://miktex.org/) for pandoc to use;
     - Install Python to use the Python script `convert.py` that takes care of collating multiple markdown files into a single one and calling pandoc to deal with it.
+* Optionally, if you use Google Chrome and want to enable MathJax for the rendering of the TeX parts of the markdown files in the GitHub web interface, try [this extension](https://chrome.google.com/webstore/detail/tex-all-the-things/cbimabofgmfdkicghcadidpemeenbffn).
 
 
 ## Using the Software
@@ -56,10 +58,23 @@ python convert.py Munkres
 ## Use the Issue Tracker
 The [issue tracker](https://github.com/kellhus/munkres-study-notes/issues) can be used for requesting clarification from more knowledgeable participants on any issues that might arise, be they unclear wording in the text, unsufficient motivation of theorems or definitions, or problems with exercises. If you know the solution to an issue, make suitable changes to the markdown files and close the issue. The issues can also be discussed in the process. An example issue is available [here](https://github.com/kellhus/munkres-study-notes/issues/1).
 
-## General Guidelines
+## Guidelines
 
-Use the issue tracker.
+### General
 
-The notation `3.12.1` refers to Chapter 3, Section 12, Theorem / Exercise / Lemma 1. Use `### Comment on Lemma 2.5.4` to add commentary to the respective theorem or lemma. Use `### Exercise 1.12.5` to add a solution to an exercise. Use `### Freestyle Heading` to add something that does not fall into the above categories.
+* Don't be afraid to modify any files in the repository. The version control should track all changes, and reverts can be made if necessary.
+* Not to put too fine a point on it, but use the issue tracker for any organizational or academic questions and / or discussion. No, seriously. :-)
+* At the end of our work, the end product should be a nice, tidy set of notes and solutions that reflects any and all questions we had in studying the textbook. And, of course, a PDF file we can save onto our hard drives to remember the experience by.
 
-We leave it up to individual participants to not look at the solutions until the participants have tried it on their own and are ready to scrutinize others' solutions, if any.
+### Editing the Markdown Files
+
+* End each sentence with a new line. This guideline is motivated by the nature of the Git versioning control system, which tracks the lines, not the words or sentences in individual lines.
+* The notation `3.12.1` refers to Chapter 3, Section 12, Theorem / Exercise / Lemma 1.
+* Use `### Comment on Lemma 2.5.4` to add commentary to the respective theorem or lemma.
+* Use `### Exercise 1.12.5` to add a solution to an exercise.
+* Use `### Freestyle Heading` to add something that does not fall into the above categories.
+* Follow the structure of the book. That is, don't put Exercise 2.10.3 before Exercise 2.10.1 in the markdown file for Section 10.
+
+### Academic Integrity
+
+TODO
