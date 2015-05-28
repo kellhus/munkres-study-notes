@@ -40,9 +40,9 @@ git push
 If the remote repository has been updated by someone else while you were working on your local copy, you will need to do the following instead:
 
 ```
-git pull
 git add .
 git commit -m "Describe the nature of your edits here"
+git pull
 git push
 ```
 
