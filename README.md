@@ -52,6 +52,16 @@ git push
 
 For further information on the Git versioning system, [these](https://www.atlassian.com/git/tutorials/) excellent tutorials are highly recommended!
 
+#### Using branches
+
+If you want to use your own branch to upload your notes and exercises (which is recommended), first create it with `git checkout --orphan [name]` where `[name]` should be replaced with the new branch name (for example, your username). This command will simultaneously create the branch and check it out.
+
+Add all your files like normal, and when you're done do the usual `git add` and `git commit` dance. Now to upload it to github, just run `git push -u origin [name]`. This will create a new branch on the remote as a copy of your local branch.
+
+If you want to switch back to master, first make sure you're on a different branch with `git branch` (if your normal tools don't tell you which branch you're on, I highly recommend checking before you do any git-related commands). Then you can checkout master with ... `git checkout master` ...
+
+That's pretty much it. If you want an actual tutorial, I'd recommend [these](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) [articles](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging).
+
 ### Markdown to PDF
 A Python script is provided that takes care of combining the markdown files and invoking the pandoc converter on the combined file. Simply open the command line in `munkres-study-notes` and call:
 
