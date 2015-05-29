@@ -1,0 +1,279 @@
+%%% LaTeX Template
+%%% This template is made for project reports
+%%% You may adjust it to your own needs/purposes
+%%%
+%%% Copyright: http://www.howtotex.com/
+%%% Date: March 2011
+
+%%% Preamble
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % Article class of KOMA-script with 11pt font and a4 format
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+
+\usepackage[english]{babel}                             % English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype}        % Better typography
+\usepackage{amsmath,amsfonts,amsthm}                    % Math packages
+\usepackage[pdftex]{graphicx}                           % Enable pdflatex
+\usepackage{url}
+\usepackage{parskip}
+
+
+%%% Custom sectioning (sectsty package)
+\usepackage{sectsty}                        % Custom sectioning (see below)
+\allsectionsfont{\centering \normalfont\scshape}  % Change font of al section commands
+
+
+%%% Custom headers/footers (fancyhdr package)
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead{}                            % No page header
+\fancyfoot[C]{}                         % Empty
+\fancyfoot[R]{\thepage}                 % Pagenumbering
+\renewcommand{\headrulewidth}{0pt}      % Remove header underlines
+\renewcommand{\footrulewidth}{0pt}        % Remove footer underlines
+\setlength{\headheight}{13.6pt}
+\newcommand{\script}{\mathcal}
+
+
+%%% Equation and float numbering
+\numberwithin{equation}{section}    % Equationnumbering: section.eq#
+\numberwithin{figure}{section}      % Figurenumbering: section.fig#
+\numberwithin{table}{section}       % Tablenumbering: section.tab#
+
+
+%%% Maketitle metadata
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}}   % Horizontal rule
+
+\title{
+    %\vspace{-1in}
+    \usefont{OT1}{bch}{b}{n}
+    %\normalfont \normalsize \textsc{School of random department names} \\ [25pt]
+    \horrule{0.5pt} \\[0.4cm]
+    \huge Topology -- Homework 1 \\
+    \horrule{2pt} \\[0.5cm]
+}
+\author{
+    \normalfont                 \normalsize
+        Thimoteus\\[-3pt]    \normalsize
+        \today
+}
+\date{}
+
+
+%%% Begin document
+\begin{document}
+\maketitle
+
+% 1,3,5,7,8
+
+\textbf{1)} Let $X$ be a topological space; let $A$ be a subset of $X$. Suppose
+that for each $x \in A$ there is an open set $U$ containing $x$ such that
+$U \subseteq A$. Show that $A$ is open in $X$.
+
+\textbf{Proof:} It suffices to show that $A$ is the union of open sets.
+To that end, let \[ \script U := \{ U \in \script{T} \mid \exists x \in A : x \in U \subseteq A \}\]
+This is a collection of open sets. Now consider $\bigcup{\script U}$, a candidate
+for $A$. To show this, let $x \in A$. Then there is an open $U$ for which $x \in U$,
+hence, $A \subseteq \bigcup{\script U}$. For the other direction, note that by
+definition, each $U$ is a subset of $A$. Hence $\bigcup{\script U} \subseteq A$.
+
+\hrulefill
+
+\textbf {3)} Show that the collection
+$\script T_c := \{ U \subseteq X | X\setminus U \hookrightarrow \mathbb N \lor X\setminus U = X \}$
+is a topology on the set $X$.
+Is the collection $\script T_{\infty} := \{ U \mid X \setminus U \text{ is infinite or empty or all of } X \}$ a topology on $X$?
+
+\textbf {Proof:} We check the three parts of the definition.
+
+1) Let $U = X$. Then
+$X\setminus U = \emptyset$ which is countable, so $X \in \script T_c$. Now let
+$U = \emptyset$. Then $X \setminus U = X$, so $\emptyset \in \script T_c$.
+
+2) Let $\script U_{j \in J}$ be a subset of $\script T_c$. We wish to show that
+$\bigcup \script U_{j \in J} \in \script T_c$. For each $\script U_j$ there are
+two possibilities: either $X \setminus \script U_j$ is countable or $X$ itself. If any
+$\script U_j = X$ then the whole union is as well. On the other hand, if no
+$\script U_j$ is the whole set, each one satisfies "$X \setminus \script U_j$ is
+countable". By De Morgan, $X \setminus \bigcup \script U_{j \in J} = 
+\bigcap (X \setminus \script U_{j \in J})$ which is also countable.
+
+3) If suffices to show $\script U_j \cap \script U_k$ is open for any $j, k \in J$.
+If they are disjoint then their intersection is empty, so open. If they are not
+disjoint, they have a nonempty intersection (in particular, each one is nonempty).
+Thus the complement of each in $X$ is countable. Then we apply De Morgan to the
+complement (in $X$) of the intersection: $X \setminus (\script U_j \cap \script U_k)
+= (X \setminus \script U_j) \cup (X \setminus \script U_k)$, which is also countable
+since it is the union of two countable sets.
+
+Then $\script T_c$ is a topology on $X$.
+
+But $\script T_\infty$ is not a topology: Let $X = \mathbb N, U_1 = \{ n \in X
+ \mid \text{ Composite}(n) \}, U_2 = \{ n \in X \mid \text{ Odd}(n) \}$. Then
+by De Morgan, $X \setminus (U_1 \cup U_2) = (X \setminus U_1) \cap (X \setminus U_2)
+ = \{2\}$, which is not an "open" set.
+
+\hrulefill
+
+\textbf {5)} Show that if $\script A$ is a basis for a topology on $X$, then the
+topology $\script T$ generated by $\script A$ equals the intersection of all topologies on
+$X$ that contain $\script A$. Prove the same if $\script A$ is a subbasis.
+
+%Recall that a basis is a set $\script A$ such that for each
+%$x \in X$ there is a $B \in \script A$ with $x \in B$, and for any $B_1, B_2$
+%with $x \in B_1 \cap B_2$ there is a $B_3$ with $x \in B_3 \subseteq B_1 \cap B_2$.
+\textbf {Proof (basis):} 
+
+($\subseteq$) Take $U \in \script T$. Then $U = \bigcup_{j \in J} B_j$ for some
+collection of basis elements. Note that each $B_j$ is also in any topology that
+contains $\script A$.
+
+($\supseteq$) Let $U$ be in the intersection of all topologies that contain $\script A$.
+Note that $\script T$ contains $\script A$, so $U$ is open in $\script T$.
+
+%Recall that a subbasis is a collection of subsets of $X$ such that their union
+%is all of $X$, and the topology generated by the subbasis is constructed by
+%taking unions of finite intersections of subbasis elements.
+\textbf {Proof (subbasis):} 
+
+($\subseteq$) Take $U \in \script T$. Then $U = \bigcup \left\{ B_j \mid B_j = \bigcap_{<\omega} B_i \right\}$
+for a collection of subbasis elements $B_i$. Since any topology that contains
+$\script A$ contains each $B_i$, it also contains each $B_j$ (since $B_j$ is a
+finite intersection of open sets). Then it also contains $U$, because $U$ is
+a union of open sets.
+
+($\supseteq$) Same as in the basis case: If $U$ is in each topology that contains
+$\script A$, it is also in $\script T$ since it, too, contains $\script A$.
+
+\hrulefill
+
+\textbf {7)} Consider the following topologies on $\mathbb R$:
+
+\begin{align*} 
+	\begin{split}
+    % open sets are generated by open intervals
+    \script T_1 &= \text{the standard topology}\\
+    % generated by open intervals and open intervals missing 1/n for n \in N
+    \script T_2 &= \mathbb R_K\\
+    % should be called the cofinite topology since every open set is cofinite
+    \script T_3 &= \text{the finite complement topology}\\
+    \script T_4 &= \text{the upper limit topology, having all sets $(a, b]$ as basis}\\
+    \script T_5 &= \text{the topology having all sets $(-\infty, a)$ as basis}
+	\end{split}					
+\end{align*}
+
+Determine, for each of these, which of the others it contains.
+
+% This sounds like it should appeal to lemma 13.3: For each x \in X and basis
+% element B, there is a basis element B' in the finer topology such that
+% x \in B' \subseteq B
+\textbf {Standard topology:}
+\begin{enumerate}
+  \item Does not refine $\script T_2$ by the argument presented in lemma 13.4.
+  \item Does refine $\script T_3$: Let $U$ be a nontrivial open set of
+    $\script T_3$. Then it's missing only finitely many real numbers. Let $x_0$
+    be the least such real number. Then we can construct an open set $U' = U$ of
+    $\script T_1$ as follows: The leftmost part, $U_l'$ is defined to be the
+    union of all intervals of the form
+    \[ (j-1, j), j \in \{ r \mid r < x_0 \} \]
+    If $x_1$ is the least missing element not equal to $x_0$, then we merely
+    take the interval $(x_0, x_1)$. We follow this construction until all missing
+    elements $x_i$ have been taken care of, and finally we define the rightmost
+    part $U_r'$ similarly as above. Then $U' = U_l' \cup U_r' \cup \bigcup(x_i, x_{i+1})$.
+    Then by construction $U'$ has every real number except the $x_i$, so is equal
+    to $U$.
+  \item Does not refine $\script T_4$ for the same reason it doesn't refine the
+    lower limit topology: given $x \in (a, b]$ there is no open interval that
+    contains $x$ and is in $(a, x]$.
+  \item Does refine $\script T_5$: Let $B_1 = (-\infty, a) $ be a basis element
+    of $\script T_5$ and $x \in B_1$. Then the open interval $(x-1, a)$ contains
+    $x$ and is a subset of $B_1$, therefore the standard topology refines
+    $\script T_5$ by lemma 13.3.
+\end{enumerate}
+
+\textbf {"Harmonic" topology}
+\begin{enumerate}
+  \item Refines $\script T_1$ by lemma 13.4.
+  \item Refines $\script T_3$ since fineness is transitive and $\script T_1$
+    refines $\script T_3$.
+  \item Does not refine $\script T_4$, argument is the same as why $\script T_1$
+    does not refine $\script T_4$.
+  \item Refines $\script T_5$ by transitivity.
+\end{enumerate}
+
+\textbf {Finite complement topology:}
+\begin{enumerate}
+  \item Does not refine $\script T_1$: let $x \in \mathbb R$ and consider the
+    interval $(x-1, x+1)$. If $U$ is an open set of the finite complement
+    topology, $U$ will necessarily contain (uncountably many) reals $y > x+1$,
+    so $U$ is not a subset of $(x-1, x+1)$.
+  \item Does not refine $\script T_2$ for the same reason.
+  \item Does not refine $\script T_4$ for the same reason.
+  \item Does not refine $\script T_5$ for the same reason.
+\end{enumerate}
+
+\textbf {Upper limit topology}
+\begin{enumerate}
+  \item Refines $\script T_1$ by a similar argument in lemma 13.4.
+  \item Refines $\script T_2$: Suppose $0 \neq x \in \mathbb R$. We're only
+    interested in basis elements $B$ that aren't in $\script T_1$, so those that have
+    at least one element of the form $\frac{1}{n}, n \in \mathbb N$. Let $p$
+    be the greatest such number smaller than $x$. By stipulation, the closed
+    interval $[p, x]$ is a subset of $B$. Thus the $\script T_4$ basis element
+    $(p, x]$ is a subset of $B$.
+    On the other hand, if $x = 0$ then $B$ is of the form $(a, b) \setminus K$
+    for some $a < 0, b > 0$. Then we take the basis element $(a, 0]$.
+    So by lemma 13.3, the upper limit topology refines $\mathbb R_k$.
+  \item Refines $\script T_3$ by transitivity.
+  \item Refines $\script T_5$ by transitivity.
+\end{enumerate}
+
+\textbf {Infinite left topology}
+First, note that only two open sets of the topology are not basis elements:
+$\mathbb R$ and $\emptyset$. This is because $\bigcap_n (-\infty, a_i) =
+(-\infty, \min \{ a_i \mid i \le n \})$ and $\bigcup_I (-\infty, a_i) =
+(-\infty, \lim \sup a_i)$, so the basis is closed under finite intersections
+and arbitrary unions.
+\begin{enumerate}
+  \item Does not refine $\script T_1$: Let $x \in (a, b)$. Then all open sets of
+    $\script T_5$ have every $y < a$ as an element, so by lemma 13.3 it can't
+    refine $\script T_1$.
+  \item Does not refine $\script T_2$ for the same reason.
+  \item Does not refine $\script T_3$: Let $U$ be an open set in $\script T_3$,
+    then $U = \mathbb R \setminus F$ for some finite subset $F \subseteq \mathbb R$.
+    Suppose $F$ has at least one element in it. Let $x$ be the least element in
+    $F$. For any $y > x$ with $y \in U$, the only way for $y$ to be included
+    in an open set $U'$ of $\script T_5$ is for $U'$ to include $x$ as well.
+    Thus open sets of $\script T_3$ are not in general open sets of $\script T_5$.
+  \item Does not refine $\script T_4$: If $(a, b]$ is a basis element of
+    $\script T_4$ then any basis element of $\script T_5$ that includes $b$ will
+    include $a$ as well.
+\end{enumerate}
+
+\hrulefill
+
+%Lemma 13.2: If $\script C$ is a collection of open sets s.t. for each open $U$ of $X$
+%and each $x \in U$ there is an element $C \in \script C$ with $x \in C \subseteq U$
+%then $\script C$ is a basis for $X$.
+\textbf {8a)} Apply lemma 13.2 to show the countable collection
+\[ \script B = \left\{(a, b) \mid a < b \right\} \qquad a, b \in \mathbb Q \]
+is a basis that generates the standard topology on $\mathbb R$.
+
+\textbf {Proof:} Let $U$ be an open set in the standard topology and $x$ a real
+such that $x \in U$. Then we can write $U$ as the union of open intervals of
+reals $(a_i, b_i)$. For at least one such interval is $x \in (a_i, b_i)$.
+Now choose a rational $p$ with $a_i < p < x$ and a rational $q$ with
+$x < q < b_i$. Then $x \in (p, q) \subseteq (a_i, b_i)$, so by lemma 13.2
+$\script B$ is a basis for the standard topology.
+
+\textbf {8b)} Show that the collection
+\[ \script C = \left\{[a,b) \mid a < b \right\} \qquad a, b \in \mathbb Q \]
+is a basis that generates a topology different from the lower limit topology on
+$\mathbb R$.
+
+\textbf {Proof:} Let $x \in \mathbb R \setminus \mathbb Q$. For no rational $a, b$
+is the interval $[a, b)$ a subset of $[x, b)$ that also includes $x$. Therefore
+by lemma 13.2 $\script C$ does not generate the same topology.
+
+%%% End document
+\end{document}
