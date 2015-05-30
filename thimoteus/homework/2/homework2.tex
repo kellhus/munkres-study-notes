@@ -1,0 +1,91 @@
+%%% LaTeX Template
+%%% This template is made for project reports
+%%% You may adjust it to your own needs/purposes
+%%%
+%%% Copyright: http://www.howtotex.com/
+%%% Date: March 2011
+
+%%% Preamble
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % Article class of KOMA-script with 11pt font and a4 format
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+
+\usepackage[english]{babel}                             % English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype}        % Better typography
+\usepackage{amsmath,amsfonts,amsthm}                    % Math packages
+\usepackage[pdftex]{graphicx}                           % Enable pdflatex
+\usepackage{url}
+\usepackage{parskip}
+
+
+%%% Custom sectioning (sectsty package)
+\usepackage{sectsty}                        % Custom sectioning (see below)
+\allsectionsfont{\centering \normalfont\scshape}  % Change font of al section commands
+
+
+%%% Custom headers/footers (fancyhdr package)
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead{}                            % No page header
+\fancyfoot[C]{}                         % Empty
+\fancyfoot[R]{\thepage}                 % Pagenumbering
+\renewcommand{\headrulewidth}{0pt}      % Remove header underlines
+\renewcommand{\footrulewidth}{0pt}        % Remove footer underlines
+\setlength{\headheight}{13.6pt}
+\newcommand{\script}{\mathcal}
+
+
+%%% Equation and float numbering
+\numberwithin{equation}{section}    % Equationnumbering: section.eq#
+\numberwithin{figure}{section}      % Figurenumbering: section.fig#
+\numberwithin{table}{section}       % Tablenumbering: section.tab#
+
+
+%%% Maketitle metadata
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}}   % Horizontal rule
+
+\title{
+    %\vspace{-1in}
+    \usefont{OT1}{bch}{b}{n}
+    %\normalfont \normalsize \textsc{School of random department names} \\ [25pt]
+    \horrule{0.5pt} \\[0.4cm]
+    \huge Topology -- Homework 1 \\
+    \horrule{2pt} \\[0.5cm]
+}
+\author{
+    \normalfont                 \normalsize
+        Thimoteus\\[-3pt]    \normalsize
+        \today
+}
+\date{}
+
+
+%%% Begin document
+\begin{document}
+\maketitle
+
+% 2, 3, 8
+
+\textbf{2)} If $\script T$ and $\script T'$ are topologies on $X$ and $\script T'$
+is strictly finer than $\script T$, what can you say about the corresponding
+subspace topologies on the subset $Y$ of $X$?
+
+You can say the subspace topology $\script S$ inherited from $\script T$ is strictly
+coarser than the subspace topology $\script S'$ inherited from $\script T'$.
+
+\textbf{3)} Consider the set $Y = [-1, 1]$ as a subspace of $\mathbb R$. Which
+of the following are open in $Y$ and which are open in $\mathbb R$?
+\begin{align*}
+  A &= \{ x \mid 0.5 < |x| < 1 \} \\
+  B &= \{ x \mid 0.5 < |x| \le 1 \} \\
+  C &= \{ x \mid 0.5 \le |x| < 1 \} \\
+  D &= \{ x \mid 0.5 \le |x| \le 1 \} \\
+  E &= \{ x \mid 0 < |x| < 1 \land x^{-1} \notin \mathbb Z^+ \}
+\end{align*}
+
+\textbf{8)} If $L$ is a straight line in the plane, describe the topology $L$
+inherits as a subspace of $\mathbb R_l \times \mathbb R$ and as a subspace of
+$\mathbb R_l \times \mathbb R_l$. In each case it is a familiar topology.
+
+%%% End document
+\end{document}
